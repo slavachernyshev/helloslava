@@ -2,11 +2,18 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // Dev server configutation: https://nuxtjs.org/docs/2.x/features/configuration#edit-host-and-port
+  // If the host is assigned the string value of '0' (not 0, which is falsy), or '0.0.0.0'
+  // your local IP address will be assigned to your Nuxt.js application.
+  server: {
+    host: '0'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'helloslava',
+    title: 'Hello Slava / Мысли про кибербезопасность',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
