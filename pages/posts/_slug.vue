@@ -14,7 +14,7 @@
           </div>
         </dl>
         <div>
-          <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-relaxed">
+          <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-tight">
             {{ post.title }}
           </h1>
         </div>
@@ -47,13 +47,13 @@
       </div>
       <footer class="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
         <div class="space-y-8 py-8">
-          <div v-if="next">
+          <div v-if="next" class="space-y-2">
             <h2 class="text-xs tracking-wide uppercase text-gray-500">Следующий пост</h2>
             <div class="text-indigo-600 hover:text-indigo-700">
               <nuxt-link :to="{ name: 'posts-slug', params: { slug: next.slug } }">{{ next.title }}</nuxt-link>
             </div>
           </div>
-          <div v-if="prev">
+          <div v-if="prev" class="space-y-2">
             <h2 class="text-xs tracking-wide uppercase text-gray-500">Предыдущий пост</h2>
             <div class="text-indigo-600 hover:text-indigo-700">
               <nuxt-link  :to="{ name: 'posts-slug', params: { slug: prev.slug } }">{{ prev.title }}</nuxt-link>

@@ -70,7 +70,9 @@ export default {
         'rehype-minify-whitespace',
         'rehype-sort-attribute-values',
         'rehype-sort-attributes',
-        'rehype-raw'
+        'rehype-raw',
+        // https://blog.rizalrenaldi.com/blog/nuxt-content-image-inside-markdown/
+        '~/plugins/rehype-content-image.js'
       ]
     }
   }
