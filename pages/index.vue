@@ -6,7 +6,7 @@
     <div class="flex items-center space-x-6 md:space-x-8 pt-6 pb-8 space-y-2 md:space-y-5">
       <img src="@/assets/images/cher.png" class="h-20 md:h-24 w-20 md:w-24 bg-gray-100 rounded-full" />
       <div class="flex-1 space-y-2">
-        <h1 class="text-3xl leading-7 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-9">Малоизвестная кибербезопасность</h1>
+        <h1 class="text-2xl leading-7 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-9">Малоизвестная кибербезопасность</h1>
         <div class="text-sm md:text-md leading-tight text-gray-500">Меня зовут Слава Чернышёв. Я занимаюсь кибербезопасностью.</div>
       </div>
     </div>
