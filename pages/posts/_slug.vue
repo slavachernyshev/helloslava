@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="pt-8">
-          <a class="text-indigo-600 hover:text-indigo-700" href="/">← Назад в блог</a>
+          <a class="text-indigo-600 hover:text-indigo-700" href="/helloslava/">← Назад в блог</a>
         </div>
       </footer>
     </div>
