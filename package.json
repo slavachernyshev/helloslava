@@ -13,6 +13,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
+    "rehype-minify-whitespace": "^4.0.5",
     "remark-footnotes": "^3.0.0",
     "remark-squeeze-paragraphs": "^4.0.0"
   },
