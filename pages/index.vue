@@ -7,7 +7,7 @@
       <img src="@/assets/images/cher.png" class="h-20 md:h-24 w-20 md:w-24 bg-gray-100 rounded-full" />
       <div class="flex-1">
         <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">Hello, Slava!</h1>
-        <div class="text-md md:text-lg leading-tight text-gray-500">Привет! Меня зовут Слава Чернышёв. Я занимаюсь кибербезопасностью.</div>
+        <div class="text-sm md:text-md leading-tight text-gray-500">Привет! Меня зовут Слава Чернышёв. Я занимаюсь кибербезопасностью.</div>
       </div>
     </div>
 
@@ -50,7 +50,7 @@ export default {
   async asyncData({ $content, params }) {
     const posts = await $content('posts')
       .only(['title', 'description', 'theme', 'slug', 'createdAt'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
     return { posts }
   },

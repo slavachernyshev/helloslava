@@ -10,5 +10,10 @@ body {
 .xl\:col-gap-6 {
   grid-column-gap: 1.5rem;
   -moz-column-gap: 1.5rem;
-  column-gap:1.5rem
+  column-gap: 1.5rem;
+}
+
+.footnote-ref {
+  vertical-align: super;
+  @apply text-xs;
 }

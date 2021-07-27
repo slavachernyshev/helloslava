@@ -58,6 +58,8 @@ export default {
   },
 
   content: {
-    // Options
+    markdown: {
+
+    }
   }
 }
