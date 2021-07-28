@@ -16,7 +16,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Hello Slava / Мысли про кибербезопасность',
+    title: 'Секретный уровень / Чернышёв Слава',
     htmlAttrs: {
       lang: 'ru'
     },

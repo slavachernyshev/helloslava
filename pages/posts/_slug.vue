@@ -6,7 +6,7 @@
     <header class="xl:pb-10 pt-6 md:pt-12 lg:pt-24">
       <div class="space-y-1 text-center">
         <div>
-          <a href="/helloslava/" class="font-extrabold text-gray-900 rounded-full bg-gray-100 py-2 px-4 my-6 inline-block">Малоизвестная кибербезопасность</a>
+          <a href="/helloslava/" class="font-extrabold text-gray-900 rounded-full bg-gray-100 py-2 px-4 my-6 inline-block">Секретный уровень</a>
         </div>
         <dl class="space-y-10">
           <div>
