@@ -3,9 +3,9 @@ export default {
   target: 'static',
 
   // https://nuxtjs.org/docs/2.x/deployment/github-pages/#deploying-to-github-pages-for-repository
-  // router: {
-  //   base: '/helloslava/'
-  // },
+  router: {
+    base: '/helloslava/'
+  },
 
   // Dev server configutation: https://nuxtjs.org/docs/2.x/features/configuration#edit-host-and-port
   // If the host is assigned the string value of '0' (not 0, which is falsy), or '0.0.0.0'
