@@ -17,3 +17,16 @@ body {
   vertical-align: super;
   @apply text-xs;
 }
+
+.prose blockquote {
+  @apply not-italic;
+  @apply font-normal;
+}
+
+.prose blockquote p:first-of-type::before {
+  content: '';
+}
+
+.prose blockquote p:last-of-type::after {
+  content: '';
+}

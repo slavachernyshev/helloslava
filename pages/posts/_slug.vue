@@ -1,5 +1,9 @@
 <template>
   <article class="xl:divide-y xl:divide-gray-200">
+    <!-- Progress -->
+    <div class="fixed z-10 top-0 inset-x-0 h-2 bg-white">
+      <div class="bg-purple-500 h-2" :style="`width: ${progress}%;`"></div>
+    </div>
     <!-- Search -->
     <!-- <app-search-input /> -->
     <!-- Header -->
@@ -23,6 +27,9 @@
         </div>
         <div class="text-xs text-gray-700">
           {{ post.theme }}
+        </div>
+        <div class="text-sm text-gray-700">
+          {{ post.ttr }}
         </div>
       </div>
     </header>
@@ -83,7 +90,36 @@ export default {
     return { post, prev, next }
   },
 
+  data: () => ({
+    bodyHeight: 0,
+    progress: 0
+  }),
+
+  mounted () {
+    // https://javascript.info/size-and-scroll-window
+    this.bodyHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    ) - document.documentElement.clientHeight
+    window.addEventListener('scroll', this.updateProgress)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.updateProgress)
+  },
+
   methods: {
+    updateProgress () {
+      this.bodyHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      ) - document.documentElement.clientHeight
+      const scrollPosition = window.pageYOffset
+      this.progress = (scrollPosition / this.bodyHeight) * 100
+    },
+
     formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('ru', options)

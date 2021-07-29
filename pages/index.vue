@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="text-base leading-6 font-medium">
-              <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.slug} }" class="text-indigo-600 hover:text-indigo-700">Читать дальше →</nuxt-link>
+              <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.slug} }" class="text-indigo-600 hover:text-indigo-700">Читать дальше &middot; {{ post.ttr }}</nuxt-link>
             </div>
           </div>
         </article>
@@ -49,7 +49,7 @@ import AppSearchInput from '~/components/AppSearchInput.vue'
 export default {
   async asyncData({ $content, params }) {
     const posts = await $content('posts')
-      .only(['title', 'description', 'theme', 'slug', 'createdAt'])
+      .only(['title', 'description', 'theme', 'slug', 'createdAt', 'ttr'])
       .sortBy('createdAt', 'desc')
       .fetch()
     return { posts }
