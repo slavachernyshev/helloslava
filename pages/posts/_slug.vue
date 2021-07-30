@@ -84,26 +84,23 @@ export default {
     return {
       title: this.post.title,
       meta: [
-        ...this.meta,
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'Secret Level of Cybersecurity' },
+        { hid: 'og:site_name', property: 'og:site_name', content: 'Secret Level' },
+        { name: "twitter:site", content: "@slavachernyshev" },
+        { name: "twitter:card", content: "summary_large_image" },
         { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${post.preview}` },
-        {
-          property: "article:published_time",
-          content: this.post.createdAt,
-        },
-        {
-          property: "article:modified_time",
-          content: this.post.createdAt,
-        },
-        {
-          property: "article:tag",
-          content: this.post.theme,
-        },
+        { property: "article:published_time", content: this.post.createdAt },
+        { property: "article:modified_time", content: this.post.createdAt },
+        { property: "article:tag", content: this.post.theme },
         { name: "twitter:label1", content: "Written by" },
         { name: "twitter:data1", content: "Слава Чернышёв" },
         { name: "twitter:label2", content: "Filed under" },
         { name: "twitter:data2", content: this.post.theme },
       ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           hid: "canonical",
           rel: "canonical",
