@@ -90,7 +90,7 @@ export default {
         { hid: 'og:site_name', property: 'og:site_name', content: 'Secret Level' },
         { name: "twitter:site", content: "@slavachernyshev" },
         { name: "twitter:card", content: "summary_large_image" },
-        { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${post.preview}` },
+        { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${this.post.preview}` },
         { property: "article:published_time", content: this.post.createdAt },
         { property: "article:modified_time", content: this.post.createdAt },
         { property: "article:tag", content: this.post.theme },
