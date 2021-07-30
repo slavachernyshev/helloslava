@@ -5,26 +5,31 @@
       <div class="bg-purple-500 h-2" :style="`width: ${progress}%;`"></div>
     </div>
 
-    <header class="bg-yellow-200 pt-12 pb-24">
+    <header :class="[`${post.background}`, 'pt-12 pb-24']">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-16">
-        <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-32">
-          <div>
-            <p>An old friend of mine, a journalist, once said that paradise on earth was to work all day alone in anticipation of an evening in interesting company.</p>
-            <p class="font-bold">&mdash; Ian McEwan</p>
+        <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-28 lg:gap-20 xl:gap-0">
+          <div class="lg:text-lg xl:text-xl lg:space-y-2">
+            <p>{{ post.foreword }}</p>
+            <p>&mdash; <span class="font-bold">{{ post.forewordAuthor }}</span></p>
           </div>
           <div class="flex flex-col md:items-end space-y-1">
-            <div class="w-96 h-96 bg-yellow-300"></div>
-            <div class="w-96 text-right text-sm">Featured artist: Bryndon Díaz</div>
+            <div :class="[`${post.imageBackground}`, 'w-96 h-96 overflow-hidden']">
+              <img :src="post.image" v-if="post.image">
+            </div>
+            <div class="w-96 text-right text-xs">
+              <span v-if="!post.imageSourceLink">{{ post.imageSource}}</span>
+              <a v-else :href="post.imageSourceLink" class="underline">{{ post.imageSource}}</a>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-16 relative">
-      <div class="absolute -top-32">
-        <img src="~/assets/images/logo.png" alt="Secret Level" class="w-32">
+      <div class="absolute -top-32 xl:-top-40">
+        <img src="~/assets/images/logo.png" alt="Secret Level" class="w-32 xl:w-44">
       </div>
-      <div class="divide-y divide-gray-200 xl:pb-0 xl:col-span-3 xl:row-span-2 prose prose-indigo 7d:prose-lg lg:prose-xl">
+      <div class="prose prose-indigo md:prose-lg lg:prose-xl xl:prose-2xl pb-32">
         <nuxt-content :document="post" />
       </div>
     </div>
@@ -74,7 +79,7 @@ export default {
   async asyncData ({ $content, params }) {
     const post = await $content('digests', params.slug).fetch()
     const [prev, next] = await $content('digests')
-      .only(['title', 'slug', 'createdAt'])
+      .only(['title', 'slug', 'createdAt', 'background', 'foreword', 'forewordAuthor', 'image', 'imageSource', 'imageBackground', 'imageSourceLink'])
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
