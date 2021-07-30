@@ -43,9 +43,9 @@
               <dl class="text-sm font-medium leading-5 whitespace-no-wrap">
                 <dt class="sr-only">Name</dt>
                 <dd class="text-gray-900">Слава Чернышёв</dd>
-                <dt class="sr-only">Twitter</dt>
+                <dt class="sr-only">Telegram</dt>
                 <dd>
-                  <a href="https://twitter.com/helloslava" class="text-indigo-600 hover:text-indigo-700">@helloslava</a>
+                  <a href="https://t.me/slavahello" class="text-indigo-600 hover:text-indigo-700">t.me/slavahello</a>
                 </dd>
               </dl>
             </li>
@@ -80,10 +80,41 @@
 
 <script>
 export default {
+  head: {
+    title: this.post.title,
+    meta: [
+      ...this.meta,
+      { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${post.preview}` },
+      {
+        property: "article:published_time",
+        content: this.post.createdAt,
+      },
+      {
+        property: "article:modified_time",
+        content: this.post.createdAt,
+      },
+      {
+        property: "article:tag",
+        content: this.post.theme,
+      },
+      { name: "twitter:label1", content: "Written by" },
+      { name: "twitter:data1", content: "Слава Чернышёв" },
+      { name: "twitter:label2", content: "Filed under" },
+      { name: "twitter:data2", content: this.post.theme },
+    ],
+    link: [
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: `https://www.slavachernyshev.ru/posts/${this.post.slug}`
+      }
+    ]
+  },
+
   async asyncData ({ $content, params }) {
     const post = await $content('posts', params.slug).fetch()
     const [prev, next] = await $content('posts')
-      .only(['title', 'slug'])
+      .only(['title', 'slug', 'createdAt', 'theme'])
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()

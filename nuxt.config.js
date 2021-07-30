@@ -24,11 +24,20 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Secret Level of Cybersecurity' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Secret Level' },
+      { name: "twitter:site", content: "@slavachernyshev" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: process.env.BASE_URL,
+      },
     ],
+    // https://github.com/nuxt/nuxt.js/issues/2230
     __dangerouslyDisableSanitizers: ['script'],
     script: [
       {

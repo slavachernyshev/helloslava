@@ -8,6 +8,9 @@
       <div class="flex-1 space-y-2">
         <h1 class="text-2xl leading-7 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-9">Секретный уровень</h1>
         <div class="text-sm md:text-md leading-tight text-gray-500">Меня зовут Слава Чернышёв. Я занимаюсь кибербезопасностью.</div>
+        <div class="text-sm md:text-md leading-tight text-gray-500">
+          Присоединяйтесь: <a href="https://t.me/slavahello" class="text-indigo-600 hover:text-indigo-700">t.me/slavahello</a>
+        </div>
       </div>
     </div>
 
