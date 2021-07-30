@@ -80,35 +80,37 @@
 
 <script>
 export default {
-  head: {
-    title: this.post.title,
-    meta: [
-      ...this.meta,
-      { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${post.preview}` },
-      {
-        property: "article:published_time",
-        content: this.post.createdAt,
-      },
-      {
-        property: "article:modified_time",
-        content: this.post.createdAt,
-      },
-      {
-        property: "article:tag",
-        content: this.post.theme,
-      },
-      { name: "twitter:label1", content: "Written by" },
-      { name: "twitter:data1", content: "Слава Чернышёв" },
-      { name: "twitter:label2", content: "Filed under" },
-      { name: "twitter:data2", content: this.post.theme },
-    ],
-    link: [
-      {
-        hid: "canonical",
-        rel: "canonical",
-        href: `https://www.slavachernyshev.ru/posts/${this.post.slug}`
-      }
-    ]
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        ...this.meta,
+        { hid: 'og:image', property: 'og:image', content: `/_nuxt/assets/images/${post.preview}` },
+        {
+          property: "article:published_time",
+          content: this.post.createdAt,
+        },
+        {
+          property: "article:modified_time",
+          content: this.post.createdAt,
+        },
+        {
+          property: "article:tag",
+          content: this.post.theme,
+        },
+        { name: "twitter:label1", content: "Written by" },
+        { name: "twitter:data1", content: "Слава Чернышёв" },
+        { name: "twitter:label2", content: "Filed under" },
+        { name: "twitter:data2", content: this.post.theme },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://www.slavachernyshev.ru/posts/${this.post.slug}`
+        }
+      ]
+    }
   },
 
   async asyncData ({ $content, params }) {
