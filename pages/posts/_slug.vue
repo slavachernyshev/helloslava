@@ -1,7 +1,7 @@
 <template>
   <article class="xl:divide-y xl:divide-gray-200">
     <!-- Progress -->
-    <div class="fixed z-10 top-0 inset-x-0 h-2 bg-white">
+    <div class="fixed z-10 top-12 md:top-16 inset-x-0 h-2 bg-transparent">
       <div class="bg-purple-500 h-2" :style="`width: ${progress}%;`"></div>
     </div>
     <!-- Search -->
