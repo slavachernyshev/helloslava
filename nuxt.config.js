@@ -28,9 +28,16 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: 'Secret Level' },
       { name: "twitter:site", content: "@slavachernyshev" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "msapplication-TileColor", content: "#da532c" },
+      { name: "theme", content: "#ffffff" }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favs/favicon.ico' },
+      { rel: 'icon', type: 'apple-touch-icon', sizes: '180x180', href: '/favs/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favs/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favs/favicon-16x16.png' },
+      { rel: 'manifest', href: '/favs/site.webmanifest' },
+      { rel: 'mask-icon', href: '/favs/safari-pinned-tab.svg', color: '#5bbad5' },
       {
         hid: "canonical",
         rel: "canonical",

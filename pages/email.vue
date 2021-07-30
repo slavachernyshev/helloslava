@@ -26,22 +26,18 @@
               <dd class="text-base leading-6 font-medium text-gray-500">
                 <time :datetime="post.createdAt">{{ formatDate(post.createdAt) }}</time>
               </dd>
-              <dt class="sr-only">Theme</dt>
-              <dd class="text-xs leading-0 font-medium text-gray-500 pr-10">
-                <div>{{ post.theme }}</div>
-              </dd>
             </dl>
             <div class="space-y-5 xl:col-span-3">
               <div class="space-y-6">
                 <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                  <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.slug} }" class="text-gray-900">{{ post.title }}</nuxt-link>
+                  <nuxt-link :to="{ name: 'digests-slug', params: { slug: post.slug} }" class="text-gray-900">{{ post.title }}</nuxt-link>
                 </h2>
                 <div class="prose max-w-none text-gray-500">
                   <p>{{ post.description }}</p>
                 </div>
               </div>
               <div class="text-base leading-6 font-medium">
-                <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.slug} }" class="text-indigo-600 hover:text-indigo-700">Читать дальше &middot; {{ post.ttr }}</nuxt-link>
+                <nuxt-link :to="{ name: 'digests-slug', params: { slug: post.slug} }" class="text-indigo-600 hover:text-indigo-700">Читать дальше &middot; {{ post.ttr }}</nuxt-link>
               </div>
             </div>
           </article>
@@ -52,11 +48,10 @@
 </template>
 
 <script>
-import AppSearchInput from '~/components/AppSearchInput.vue'
 export default {
   async asyncData({ $content, params }) {
-    const posts = await $content('posts')
-      .only(['title', 'description', 'theme', 'slug', 'createdAt', 'ttr'])
+    const posts = await $content('digests')
+      .only(['title', 'description', 'slug', 'createdAt', 'ttr'])
       .sortBy('createdAt', 'desc')
       .fetch()
     return { posts }
